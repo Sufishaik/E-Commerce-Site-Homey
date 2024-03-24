@@ -3,10 +3,10 @@ import { BsCart3, BsFillPersonPlusFill, BsMoonFill, BsSunFill } from 'react-icon
 import { FaBarsStaggered } from 'react-icons/fa6';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
-import HomeImage from "../../src/assets/img.webp";
+import HomeImage from "../assets/img.webp";
 import { clearCart } from '../Features/Cart/CartSlice';
 import { logoutUser } from '../Features/User/UserSlice';
-import { NavLinks } from './Navlinks.tsx';
+import { NavLinks } from './Navlinks';
 import React from 'react';
 const themes = {
   autumn: 'autumn',
@@ -18,7 +18,7 @@ const getThemeLocalStorage = () => {
 };
 
 export const Navbar = () => {
-  const [theme, setTheme] = useState<string>(getThemeLocalStorage());
+  const [theme, setTheme] = useState(getThemeLocalStorage());
   const handleTheme = () => {
     const { autumn, luxury } = themes;
     const newTheme = theme === autumn ? luxury : autumn;
@@ -30,10 +30,10 @@ export const Navbar = () => {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const numItemsInCart = useSelector((state: any) => state.cartSlice?.numItemsInCart);
+  const numItemsInCart = useSelector((state) => state.cartSlice?.numItemsInCart);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const user = useSelector((state: any) => state.userSlice.user);
+  const user = useSelector((state) => state.userSlice.user);
 
   const handleLogout = () => {
     navigate("/");

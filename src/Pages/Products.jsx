@@ -3,7 +3,7 @@ import React from "react";
 import { customFetch } from "../Utils/Index.jsx";
 import { ProductsContainer } from "../Component/ProductContainer";
 import { PaginationContainer } from "../Component/PaginationContainer";
-import { Filters } from "../Component/Filters.tsx";
+import { Filters } from "../Component/Filters";
 
 const url = "/products";
 
@@ -39,15 +39,15 @@ export const loader =
             );
             const products = response.data.data;
             const meta = response.data.meta;
-            return {products, meta, params};
+            return { products, meta, params };
         };
 
 export const Products = () => {
     return (
         <>
-        <Filters/>
-        <ProductsContainer/>
-        <PaginationContainer/>
+            <Filters />
+            <ProductsContainer />
+            <PaginationContainer />
         </>
     )
 }

@@ -2,13 +2,9 @@ import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import React from 'react';
 
-interface Link {
-    id: number;
-    url: string;
-    text: string;
-}
 
-const links: Link[] = [
+
+const links = [
     {
         id: 1,
         url: "/",
@@ -36,8 +32,8 @@ const links: Link[] = [
     },
 ];
 
-export const NavLinks: React.FC = () => {
-    const user = useSelector((state: any) => state.userSlice.user);
+export const NavLinks = () => {
+    const user = useSelector((state) => state.userSlice.user);
 
     return (
         <>

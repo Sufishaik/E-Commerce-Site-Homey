@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import Hero7 from "../assets/hero7.webp";
 
-const Hero: React.FC = () => {
+export const Hero = () => {
    return (
       <>
          <div className='grid lg:grid-cols-2 gap-24 items-center'>
@@ -16,9 +16,9 @@ const Hero: React.FC = () => {
                   <strong>YOU</strong>, guiding you through every step of the way.
                </p>
                <div className='mt-10'>
-                  <Link to="/products" className='btn btn-primary'>
+                  <a href="/products" className='btn btn-primary'>
                      Shop Now
-                  </Link>
+                  </a>
                </div>
             </div>
             <div className='hidden h-[35rem] lg:carousel carousel-end space-x-2 rounded-box'>
@@ -31,4 +31,4 @@ const Hero: React.FC = () => {
    );
 }
 
-export default Hero;
+

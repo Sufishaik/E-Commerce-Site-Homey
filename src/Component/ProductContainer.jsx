@@ -4,7 +4,8 @@ import { useLoaderData } from 'react-router-dom';
 // import { ProductsGrid } from './ProductsGrid';
 import React from 'react';
 import ProductList from './ProductList';
-import { ProductsGrid } from './ProductsGrid.tsx';
+import { ProductsGrid } from './ProductsGrid';
+// import { ProductsGrid } from './ProductsGrid.tsx';
 
 export const ProductsContainer = () => {
     const { meta } = useLoaderData();

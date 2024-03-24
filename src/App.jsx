@@ -1,37 +1,4 @@
-// import React from 'react'
-// import { Navbar } from './components/Navbar'
-// import {Details} from "./components/Details"
 
-// function App() {
-//   return (
-//     <div>
-//       <Navbar />
-//      <Details/>
-//     </div>
-//   )
-// }
-
-// export default App
-
-// import React from 'react'
-// import Products from "./queryComp/Products";
-// import Product from "./queryComp/Product";
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// function App() {
-//   return (
-//     <div>
-//       <BrowserRouter>
-//       <Routes>
-//         <Route path='/product' element={<Products />}/>
-//         <Route path='/product/:id' element={<Product />}/>
-//       </Routes>
-//       </BrowserRouter>
-
-//     </div>
-//   )
-// }
-
-// export default App
 import React from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -46,10 +13,10 @@ import { Register, action as registerAction } from './Pages/Register';
 import { loader as LandingLoader, Landing } from './Pages/Landing';
 import { ErrorElement } from './Component/ErrorElement';
 import { Products, loader as productsLoader } from './Pages/Products.jsx';
-import { SingleProduct, loader as  singleProductAction } from './Pages/SingleProducts';
+import { SingleProduct, loader as singleProductAction } from './Pages/SingleProducts';
 import { Cart } from './Pages/Cart';
 import { Checkout, loder as checkoutLoader } from './Pages/Checkout';
-import {action as CheckOutFormAction} from "./Component/CheckOutForm"
+import { action as CheckOutFormAction } from "./Component/CheckOutForm"
 import { Orders, loader as ordersLoader } from './Pages/Orders';
 import { About } from './Pages/About';
 const queryClient = new QueryClient({
@@ -86,21 +53,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart/>
+        element: <Cart />
       },
       {
         path: "/about",
-        element: <About/>
+        element: <About />
       },
       {
         path: "/checkout",
-        element: <Checkout/>,
+        element: <Checkout />,
         loader: checkoutLoader(Store),
-        action : CheckOutFormAction(Store, queryClient),
+        action: CheckOutFormAction(Store, queryClient),
       },
       {
         path: "/orders",
-        element: <Orders/>,
+        element: <Orders />,
         loader: ordersLoader(Store, queryClient),
       },
     ]

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Outlet, useNavigation } from 'react-router-dom';
-// import { Navbar } from '../Component/Navbar.tsx';
-import Loading from '../Component/Loading.tsx';
-import { Navbar } from '../Component/Navbar.tsx';
+
+import Loading from '../Component/Loading';
+import { Navbar } from '../Component/Navbar';
 
 export const HomeLayout = () => {
   const navigation = useNavigation();
@@ -15,7 +15,7 @@ export const HomeLayout = () => {
           <Loading />
         ) : (
           <section className='align-element p-20'>
-            <Outlet />  
+            <Outlet />
           </section>
         )
       }

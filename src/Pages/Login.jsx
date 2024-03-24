@@ -1,11 +1,12 @@
 import { useDispatch } from 'react-redux';
 import { Form, Link, redirect, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { FormInputs } from '../Component/FormInputs';
+// import FormInputs from '../Component/FormInputs.jsx';
 import { loginUser } from '../Features/User/UserSlice';
 import { customFetch } from '../Utils/Index.jsx';
 import React, { useState } from 'react';
 import { SubmitButton } from '../Component/SubmitButton';
+import { FormInputs } from '../Component/FormInputs';
 export const action =
     (store) =>
         async ({ request }) => {
