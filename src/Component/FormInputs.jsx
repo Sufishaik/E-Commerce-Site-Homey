@@ -1,5 +1,5 @@
 import React from "react"
-export const FormInputs = ({ label, name, type, defaultValue,  size }) => {
+export const FormInputs = ({ label, name, type, defaultValue, size }) => {
     return (
         <>
             <div className="form-control">
@@ -9,7 +9,7 @@ export const FormInputs = ({ label, name, type, defaultValue,  size }) => {
                 <input
                     type={type}
                     name={name}
-                    defaultValue={defaultValue} 
+                    defaultValue={defaultValue}
                     className={`input input-bordered ${size}`}
                 />
             </div>

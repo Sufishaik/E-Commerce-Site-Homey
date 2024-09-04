@@ -45,9 +45,12 @@ export const loader =
 export const Products = () => {
     return (
         <>
-            <Filters />
-            <ProductsContainer />
-            <PaginationContainer />
+            <div className="ml-auto">
+
+                <Filters />
+                <ProductsContainer />
+                <PaginationContainer />
+            </div>
         </>
     )
 }

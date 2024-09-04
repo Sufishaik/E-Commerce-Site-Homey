@@ -50,12 +50,14 @@ export const Navbar = () => {
               <img src={HomeImage} alt="" className="w-15 h-12" />
             </NavLink>
             <div className='dropdown'>
-              <label tabIndex={0} className='btn btn-ghost lg:hidden'>
-                <FaBarsStaggered className='h-6 w-6' />
-              </label>
-              <ul tabIndex={0} className='menu menu-sm dropdown-content mt-10 z-[1] p-2 shadow bg-base-100 rounded-box w-100'>
-                <NavLinks />
-              </ul>
+              <div className='w-full'>
+                <label tabIndex={0} className='btn btn-ghost lg:hidden'>
+                  <FaBarsStaggered className='h-6 w-6' />
+                </label>
+                <ul tabIndex={0} className='menu menu-sm dropdown-content mt-10 z-[1] p-2 shadow bg-base-100 rounded-box w-100'>
+                  <NavLinks />
+                </ul>
+              </div>
             </div>
           </div>
           <div className='navbar-center hidden lg:flex h-40'>

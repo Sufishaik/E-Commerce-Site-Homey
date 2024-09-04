@@ -7,7 +7,7 @@ export const FormRange = ({ label, name, size, price }) => {
     const [selectPrice, setSelectedPrice] = useState(price || maxPrice)
     return (
         <div className='form-control'>
-            <label htmlFor={name} className='label cursor-pointer'>
+            <label htmlFor={name} className='label flex gap-10 cursor-pointer'>
                 <span className='label-text capitalize'>{label}</span>
                 <span>{formatPrice(selectPrice)}</span>
             </label>
