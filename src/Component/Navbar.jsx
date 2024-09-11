@@ -65,7 +65,7 @@ export const Navbar = () => {
               <NavLinks />
             </ul>
           </div>
-          <div className='navbar-end'>
+          <div className='navbar-end  gap-1'>
             <label className='swap swap-rotate'>
               <input type="checkbox" onChange={handleTheme} />
               {theme === themes.luxury ? (
@@ -83,9 +83,9 @@ export const Navbar = () => {
                 </span>
               </div>
             </NavLink>
-            <div className='justify-center items-center gap-x-4'>
+            <div className='justify-center flex items-center gap-x-4'>
               {user ? (
-                <div className='flex gap-x-2 sm:gap-x-8 items-center'>
+                <div className='flex gap-5 items-center'>
                   <p className='text-xs sm:text-sm'>Hello, {user?.username}</p>
                   <button className='btn btn-xs btn-outline btn-primary' onClick={handleLogout}>Logout</button>
                 </div>
