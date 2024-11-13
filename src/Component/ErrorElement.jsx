@@ -5,7 +5,7 @@ export const ErrorElement = () => {
   console.log(error);
   return (
     <div>
-      <h4 className="font-bold text-4xl">There was an error.....</h4>
+      <h4 className="font-bold text-4xl">There was an error, Refresh and try again</h4>
     </div>
   );
 };

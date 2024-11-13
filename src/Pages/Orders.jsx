@@ -26,7 +26,7 @@ export const loader =
     (store, queryClient) =>
         async ({ request }) => {
             const user = store.getState().userSlice.user;
-            if(!user) {
+            if (!user) {
                 toast.warn('You have to be logged in to view orders')
                 return redirect("/login");
             }
@@ -37,26 +37,26 @@ export const loader =
                 const response = await queryClient.ensureQueryData(
                     ordersQuery(params, user),
                 );
-                return {orders: response.data.data, meta: response.data.meta};
-            }catch(error) {
-                const errMessage = 
-                error?.response?.data?.error?.message || "There was an error";
+                return { orders: response.data.data, meta: response.data.meta };
+            } catch (error) {
+                const errMessage =
+                    error?.response?.data?.error?.message || "There was an error, Refresh and try again";
                 toast.error(errMessage);
-                if(error?.response?.status === 401 || 403) return request("/login");
+                if (error?.response?.status === 401 || 403) return request("/login");
                 return null;
             }
         }
 
 export const Orders = () => {
-    const {meta} = useLoaderData();
-    if(meta.pagination.total <1 ) {
-        return <SectionTitle text="Please make an order"/>
+    const { meta } = useLoaderData();
+    if (meta.pagination.total < 1) {
+        return <SectionTitle text="Please make an order" />
     }
     return (
         <>
-        <SectionTitle text="Your Orders"/>
-        <OrderList/>
-        <PaginationContainer/>
+            <SectionTitle text="Your Orders" />
+            <OrderList />
+            <PaginationContainer />
         </>
     )
 }

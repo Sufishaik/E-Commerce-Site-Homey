@@ -31,26 +31,26 @@ export const action =
                 store.dispatch(clearCart());
                 toast.success("Order Places Successfully");
                 return redirect("/orders");
-            }catch(error) {
-                const errorMess = 
-                error?.response?.data?.error?.message || "There is an Error";
+            } catch (error) {
+                const errorMess =
+                    error?.response?.data?.error?.message || "There is an Error, Refresh and try again";
                 toast.error(errorMess);
-                if(error?.response?.status === 401 || 403) return redirect("/login");
+                if (error?.response?.status === 401 || 403) return redirect("/login");
                 return null;
             }
         };
 
 export const CheckOutForm = () => {
- return (
-    <>
-    <Form method='POST' className='flex flex-col gap-y-4'>
-     <h4 className='font-medium text-xl capitalize'>Shipping information</h4>
-     <FormInputs label="first name" name="name" type="text" defaultValue="" size=""/>
-     <FormInputs label="address" name="address" type="text" defaultValue="" size=""/>
-     <div className='mt-4'>
-            <SubmitButton text="place your order"/>
-     </div>
-    </Form>
-    </>
- )
+    return (
+        <>
+            <Form method='POST' className='flex flex-col gap-y-4'>
+                <h4 className='font-medium text-xl capitalize'>Shipping information</h4>
+                <FormInputs label="first name" name="name" type="text" defaultValue="" size="" />
+                <FormInputs label="address" name="address" type="text" defaultValue="" size="" />
+                <div className='mt-4'>
+                    <SubmitButton text="place your order" />
+                </div>
+            </Form>
+        </>
+    )
 }
